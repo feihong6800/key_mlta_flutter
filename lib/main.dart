@@ -34,28 +34,33 @@ class CustomLayout extends StatelessWidget {
                   height: 300.0,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.only(top: 16.0),
-                  margin: EdgeInsets.all(16.0),
-                  child:ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomeActivity()),
-                      );// Handle button click here
-                    },
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFD6EFEE), // Equivalent to android:backgroundTint="#D6EFEE"
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 90.0,
-                        vertical: 15.0,
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.only(top: 16.0),
+                    margin: EdgeInsets.all(16.0),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeActivity()),
+                          ); // Handle button click here
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Color(0xFFD6EFEE),
+                          // Equivalent to android:backgroundTint="#D6EFEE"
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 90.0,
+                            vertical: 15.0,
+                          ),
+                        ),
+                        child: Text(
+                          'Login',
+                          style: TextStyle(fontSize: 15),
+                        ), // Replace with your button text
                       ),
-                    ),
-                    child: Text('Login',
-                      style: TextStyle(fontSize: 15),
-                    ), // Replace with your button text
-                  ),
-                )
+                    ))
               ],
             ),
           ),
